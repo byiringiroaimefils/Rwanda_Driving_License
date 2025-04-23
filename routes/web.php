@@ -50,14 +50,14 @@ Route::get('/logout', [registerController::class, 'logout'])->name('logout');
 
 
 // candidate Route with controller
-Route::get('candidate', [candidateController::class, 'select_canditate']);
+Route::get('candidate', [candidateController::class, 'select_canditate'])->name('candidate');
 Route::post('/candidate/insert', [candidateController::class, 'register_candidate'])->name('candidate.register_candidate');
 Route::get('/edit_candidate/{id}', [candidateController::class, 'edit_candidate'])->name('candidate.edit_grade');
 Route::put('/update_candidate/{id}', [candidateController::class, 'update_candidate'])->name('candidate.update_candidate');
 Route::delete('/delete_candidate/{id}', [candidateController::class, 'delete_candidate'])->name('candidate.delete_candidate');
 
 // Grade Route with controller
-Route::get('grade', [gradeController::class, 'select_grade']);
+Route::get('grade', [gradeController::class, 'select_grade'])->name('grade');
 Route::get('/select_candidate/{id}', [gradeController::class, 'select_candidate'])->name('grade.select_candidate');
 Route::post('/grade/insert', [gradeController::class, 'register_grade'])->name('grade.register_grade');
 Route::get('/edit_grade/{id}', [gradeController::class, 'edit_grade'])->name('grade.edit_grade');

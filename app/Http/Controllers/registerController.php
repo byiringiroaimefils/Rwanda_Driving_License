@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\register;
+use App\Models\candidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -42,7 +43,10 @@ class registerController extends Controller
         $data = null;
         if (Session::has('loginid')) {
             $data = register::where('id', Session::get('loginid'))->first();
-            return view('index', compact('data'));
+            $candidate_dashboard = candidate::with('grade')->get();
+            $count_candidate  = $candidate_dashboard->count('id');
+
+            return view('index', compact('data','candidate_dashboard','count_candidate'));
         }
 
     }

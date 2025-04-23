@@ -9,26 +9,36 @@
 </head>
 
 <body>
-    <h2>Candidate Form</h2>
-    <form action="{{route('candidate.register_candidate')}}" method='post'>
-        @csrf
-        @method('post')
-        <label for="">First Name</label><br>
-        <input type="text" name="firstName" required><br><br>
-        <label for="">Second Name</label><br>
-        <input type="text" name="secondName" required><br><br>
-        <label for="">Male</label>
-        <input type="radio" value="Male" name="gender" required><br>
-        <label for="">Female</label>
-        <input type="radio" value="Female" name="gender" required><br><br>
-        <label for="">Date of Birth</label><br>
-        <input type="date" name="dof" required><br><br>
-        <label for="">Exam Date</label><br>
-        <input type="date" name="examDate" required><br><br>
-        <label for="">Exam Date</label><br>
-        <input type="number" name="phoneNumber" required><br><br>
-        <button>Add Candidate</button>
-    </form>
+    <x-navbar />
+    <section style="margin-left: 19.5%">
+        <div>
+            <h2>Create Candidate</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, praesentium!</p>
+        </div>
+        <br>
+        <form action="{{ route('candidate.register_candidate') }}" method='post'>
+            @csrf
+            @method('post')
+            <label for="">First Name</label><br>
+            <input type="text" name="firstName" required><br><br>
+            <label for="">Second Name</label><br>
+            <input type="text" name="secondName" required><br><br>
+            <label for="">Male</label>
+            <input type="radio" value="Male" name="gender" required><br>
+            <label for="">Female</label>
+            <input type="radio" value="Female" name="gender" required><br><br>
+            <label for="">Date of Birth</label><br>
+            <input type="date" name="dof" required><br><br>
+            <label for="">Exam Date</label><br>
+            <input type="date" name="examDate" required><br><br>
+            <label for="">Exam Date</label><br>
+            <input type="number" name="phoneNumber" required><br><br>
+            <button>Add Candidate</button>
+            <button><a href="{{ route('candidate') }}">Cancel</a></button>
+
+        </form>
+    </section>
+
 </body>
 
 </html>

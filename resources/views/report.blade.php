@@ -9,10 +9,16 @@
 </head>
 
 <body>
-    <div class="main">
-        <x-navbar />
-        <section>
+    {{-- <div class="main"> --}}
+    <x-navbar />
+    <section style="margin-left: 19.5%">
+        <div>
             <h2>Report Page</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, mollitia!</p>
+        </div>
+        <br><br><br>
+        <div>
+
             <form action="{{ route('report') }}" method="GET">
                 <label for="">Start Date</label>
                 <input type="date" name="start_date">
@@ -21,7 +27,7 @@
                 <button>Generate Report</button>
             </form>
             <br><br>
-            <table border="2" style="width: 80%;">
+            <table border="2" style="width: 120%; border-collapse: collapse;">
                 <tr>
                     <th>id</th>
                     <th>First Name</th>
@@ -57,8 +63,11 @@
                     <td colspan="9">{{ $count_candidate }}</td>
                 </tr>
             </table>
-        </section>
-    </div>
+            <br>
+            <button>Print Report</button>
+        </div>
+    </section>
+    {{-- </div> --}}
 
 </body>
 

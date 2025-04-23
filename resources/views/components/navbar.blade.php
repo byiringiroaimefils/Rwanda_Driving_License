@@ -1,20 +1,29 @@
-<nav style="display: flex; justify-content: space-between; margin: 5px;">
-    <div>
-        <h3>Driving_licinse</h3>
-    </div>
-    <div class="">
-        <ul style="display: flex; justify-content: space-between; gap: 30px;">
-            <li style=" list-style: none"><a style="font-size: 20px;  text-decoration: none; color: black;" href="/dashboard"
-                    class="hover:underline">DashBoard</a></li>
-            <li style="list-style: none"><a style="font-size: 20px;;text-decoration: none; color: black;" href="/candidate"
-                    class="hover:underline">Candidates</a></li>
-            <li style="list-style: none"><a style="font-size: 20px;;text-decoration: none; color: black;" href="/grade"
-                    class="hover:underline">Grade</a></li>
-            <li style="list-style: none"><a style="font-size: 20px;;text-decoration: none ; color: black;"
-                    href="/report" class="hover:underline">Report</a></li>
-        </ul>
-    </div>
-    <div style="margin-right:20px ">
-    <p><a style="text-decoration: none ; color: red;" href="{{ route('logout') }}">Log Out</a></p>
-    </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{asset('style/app.css')}}">
+    <style>
+
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div>
+            <h3>Drive License System</h3>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/candidate">Candidates</a></li>
+                <li><a href="/grade">Grade</a></li>
+                <li><a href="/report">Report</a></li>
+            </ul>
+        </div>
+        <div class="logout">
+            <a href="{{ route('logout') }}" style="color: red;">Log Out</a>
+        </div>
+    </nav>
+</body>
+</html>

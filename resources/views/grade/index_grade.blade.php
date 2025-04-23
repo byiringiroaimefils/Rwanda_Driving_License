@@ -10,14 +10,16 @@
 
 <body>
     <x-navbar />
-    <section>
-        <h2>Grade Page</h2>
+    <section style="margin-left: 19.5%">
+        <div>
+            <h2>Grade Page</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, placeat.</p>
+        </div><br><br>
         <a href="/add_grade">Add Grade</a>
-        <br>
         @if (Session::has('message'))
             <div>{{ Session::get('message') }}</div>
         @endif
-        <table border="2" style="width: 80%;">
+        <table border="2" style="width: 135%; border-collapse: collapse;">
             <tr>
                 <th>id</th>
                 <th>First Name</th>

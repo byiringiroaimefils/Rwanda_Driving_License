@@ -10,15 +10,18 @@
 
 <body>
     <x-navbar />
-    <section>
-        <h2>Candidate Page</h2>
+    <section style="margin-left: 19.5%">
+        <div>
+            <h2>Candidate Page</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, placeat.</p>
+
+        </div><br><br>
         <a href="/add_candidate">Add Candidate</a>
-        <br><br>
         @if (Session::has('message'))
             <div>{{ Session::get('message') }}</div>
         @endif
         <br><br>
-        <table border="2" style="width: 80%;">
+        <table border="2" style="width: 160%; border-collapse: collapse;">
             <tr>
                 <th>id</th>
                 <th>First Name</th>

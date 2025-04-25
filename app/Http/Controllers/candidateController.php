@@ -9,7 +9,7 @@ class candidateController extends Controller
 {
     public function select_canditate()
     {
-        $candidates = candidate::all();
+        $candidates = Candidate::paginate(5); // 5 items per page
         // $count_candidate=$candidates->count('i');
         return view('candidate.index_candidate', compact('candidates'));
     }

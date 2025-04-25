@@ -65,4 +65,4 @@ Route::put('/update_grade/{id}', [gradeController::class, 'update_grade'])->name
 Route::delete('/delete_grade/{id}', [gradeController::class, 'delete_grade'])->name('grade.delete_grade');
 
 // Report Route with controller
-Route::get('report', [reportController::class, 'index'])->name('report');
+Route::get('/report', [reportController::class, 'index'])->name('report');

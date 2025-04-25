@@ -44,9 +44,9 @@ class registerController extends Controller
         if (Session::has('loginid')) {
             $data = register::where('id', Session::get('loginid'))->first();
             $candidate_dashboard = candidate::with('grade')->get();
-            $count_candidate  = $candidate_dashboard->count('id');
+            $count_candidate = $candidate_dashboard->count('id');
 
-            return view('index', compact('data','candidate_dashboard','count_candidate'));
+            return view('index', compact('data', 'candidate_dashboard', 'count_candidate'));
         }
 
     }

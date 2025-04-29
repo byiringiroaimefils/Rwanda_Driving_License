@@ -63,6 +63,13 @@
                                 <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
                                     <i class="fas fa-user text-blue-600 text-sm"></i>
                                 </div>
+                                <div class="hidden md:block text-left">
+                                    <p class="text-sm font-medium text-gray-900">
+                                        {{ auth()->user()->adminName ?? 'Admin' }}
+                                    </p>
+                                    <p class="text-xs text-gray-500">Administrator</p>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 text-xs"></i>
                             </button>
 
                             <!-- Dropdown Menu -->
@@ -70,11 +77,7 @@
                                 class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                                 <div class="px-4 py-2 border-b">
                                     <p class="text-sm font-medium text-gray-900">
-                                        @php
-                                            $admin = \App\Models\register::find(session('loginid'));
-                                        @endphp
-
-                                        {{ $admin->adminName ?? 'Admin' }}
+                                        {{  App\Models\register::where('id',Session::get('loginid'))->first()->adminName}}
                                     </p>
                                     <p class="text-xs text-gray-500">Administrator</p>
                                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\register;
 use App\Models\candidate;
+use App\Models\grade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -45,8 +46,9 @@ class registerController extends Controller
             $data = register::where('id', Session::get('loginid'))->first();
             $candidate_dashboard = candidate::with('grade')->get();
             $count_candidate = $candidate_dashboard->count('id');
-
-            return view('index', compact('data', 'candidate_dashboard', 'count_candidate'));
+            $candidate_pass = grade::where('decision', 'pass')->count();
+            $candidate_fail = grade::where('decision', 'fail')->count(); // count
+            return view('index', compact('data', 'candidate_dashboard', 'count_candidate', 'candidate_pass','candidate_fail'));
         }
 
     }
